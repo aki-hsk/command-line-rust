@@ -71,7 +71,7 @@ fn output(buf_read: Box<dyn BufRead>, number_lines: bool, number_nonblank_lines:
             Ok(text) => {
                 if !number_lines && !number_nonblank_lines {
                     println!("{}", text);
-                } else if number_nonblank_lines && text.len() == 0 {
+                } else if number_nonblank_lines && text.is_empty() {
                     println!()
                 } else if number_lines || number_nonblank_lines {
                     println!("{:>6}\t{}", line_num, text);
